@@ -2,6 +2,12 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const { toJSON, paginate } = require('./plugins');
 
+// TODOs:
+// 1. Research if more elegent way to exist to define phonenumbers, validators etc.
+// 2. A better Regex should be applied, etc.
+// 3. Apply `/constants/errorMessages` feature!
+const phoneNumberRegex = /[0-9]/;
+
 const userSchema = mongoose.Schema(
   {
     name: {
@@ -25,38 +31,38 @@ const userSchema = mongoose.Schema(
       type: String,
       trim: true,
     },
-    phoneWork: {
+    workNumber: {
       type: Number,
       validate: {
         validator(v) {
-          return /[0-9]/.test(v);
+          return phoneNumberRegex.test(v);
         },
         message: '{VALUE} is not a valid work phone number!',
       },
     },
-    phoneHome: {
+    homeNumber: {
       type: Number,
       validate: {
         validator(v) {
-          return /[0-9]/.test(v);
+          return phoneNumberRegex.test(v);
         },
         message: '{VALUE} is not a valid work phone number!',
       },
     },
-    phoneMobile: {
+    mobileNumber: {
       type: Number,
       validate: {
         validator(v) {
-          return /[0-9]/.test(v);
+          return phoneNumberRegex.test(v);
         },
         message: '{VALUE} is not a valid work phone number!',
       },
     },
-    phoneOther: {
+    otherNumber: {
       type: Number,
       validate: {
         validator(v) {
-          return /[0-9]/.test(v);
+          return phoneNumberRegex.test(v);
         },
         message: '{VALUE} is not a valid work phone number!',
       },
