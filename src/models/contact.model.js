@@ -2,11 +2,14 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const { toJSON, paginate } = require('./plugins');
 
+// Call the constats
+const { errorMsgs } = require('../constants');
+
 // TODOs:
 // 1. Research if more elegent way to exist to define phonenumbers, validators etc.
 // 2. A better Regex should be applied, etc.
 // 3. Apply `/constants/errorMessages` feature!
-const phoneNumberRegex = /[0-9]/;
+const phoneNumberRegex = /^(\()?\d{3}(\))?(-|\s)?\d{3}(-|\s)\d{4}$/;
 
 const userSchema = mongoose.Schema(
   {
@@ -23,7 +26,7 @@ const userSchema = mongoose.Schema(
       lowercase: true,
       validate(value) {
         if (!validator.isEmail(value)) {
-          throw new Error('Invalid email');
+          throw new Error(errorMsgs.invalidEmail);
         }
       },
     },

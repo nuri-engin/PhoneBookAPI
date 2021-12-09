@@ -16,6 +16,8 @@ describe('Contact model', () => {
       };
     });
 
+    // TODO: This test case will always fail! Can not overcome the 'faker's phoneNumber samples.
+    // It always returns a number which ends like: 'x123'. Therefore need to keep research for a solution...
     test('should correctly validate a valid contact', async () => {
       await expect(new Contact(newContact).validate()).resolves.toBeUndefined();
     });
