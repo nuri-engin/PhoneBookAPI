@@ -220,6 +220,35 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "/v1/contacts: Delete a specific contact",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "AnyToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{LOCAL}}/v1/contacts/61b0a435b16cc8a51827edfa",
+					"host": [
+						"{{LOCAL}}"
+					],
+					"path": [
+						"v1",
+						"contacts",
+						"61b0a435b16cc8a51827edfa"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
