@@ -72,6 +72,63 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "/v1/contacts: Get all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "AnyToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LOCAL}}/v1/contacts",
+					"host": [
+						"{{LOCAL}}"
+					],
+					"path": [
+						"v1",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/v1/contacts: Get a specific contact",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "AnyToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LOCAL}}/v1/contacts/61b1c6c2b353b160e812b380",
+					"host": [
+						"{{LOCAL}}"
+					],
+					"path": [
+						"v1",
+						"contacts",
+						"61b1c6c2b353b160e812b380"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
