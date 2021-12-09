@@ -32,7 +32,7 @@ module.exports = router;
  * /contacts:
  *   post:
  *     summary: Create a contact
- *     description: Only admins can create other contacts.
+ *     description: Only allowed consumers can create other contacts.
  *     tags: [Contacts]
  *     security:
  *       - bearerAuth: []
@@ -45,8 +45,6 @@ module.exports = router;
  *             required:
  *               - name
  *               - email
- *               - password
- *               - role
  *             properties:
  *               name:
  *                 type: string
@@ -54,19 +52,17 @@ module.exports = router;
  *                 type: string
  *                 format: email
  *                 description: must be unique
- *               password:
+ *               address:
  *                 type: string
- *                 format: password
- *                 minLength: 8
- *                 description: At least one number and one letter
- *               role:
- *                  type: string
- *                  enum: [contact, admin]
+ *                 description: A proper address definition
  *             example:
  *               name: fake name
  *               email: fake@example.com
- *               password: password1
- *               role: contact
+ *               address: UK
+ *               workNumber: 1234567890
+ *               homeNumber: 1234567890
+ *               mobileNumber: 1234567890
+ *               otherNumber: 1234567890
  *     responses:
  *       "201":
  *         description: Created
@@ -83,7 +79,7 @@ module.exports = router;
  *
  *   get:
  *     summary: Get all contacts
- *     description: Only admins can retrieve all contacts.
+ *     description: Only allowed consumers can retrieve all contacts.
  *     tags: [Contacts]
  *     security:
  *       - bearerAuth: []
@@ -94,10 +90,10 @@ module.exports = router;
  *           type: string
  *         description: Contact name
  *       - in: query
- *         name: role
+ *         name: address
  *         schema:
  *           type: string
- *         description: Contact role
+ *         description: Contact address
  *       - in: query
  *         name: sortBy
  *         schema:
@@ -152,7 +148,7 @@ module.exports = router;
  * /contacts/{id}:
  *   get:
  *     summary: Get a contact
- *     description: Logged in contacts can fetch only their own contact information. Only admins can fetch other contacts.
+ *     description: Only allowed consumers can fetch data.
  *     tags: [Contacts]
  *     security:
  *       - bearerAuth: []
@@ -179,7 +175,7 @@ module.exports = router;
  *
  *   patch:
  *     summary: Update a contact
- *     description: Logged in contacts can only update their own information. Only admins can update other contacts.
+ *     description: Only allowed consumers can update other contacts.
  *     tags: [Contacts]
  *     security:
  *       - bearerAuth: []
@@ -203,15 +199,13 @@ module.exports = router;
  *                 type: string
  *                 format: email
  *                 description: must be unique
- *               password:
+ *               address:
  *                 type: string
- *                 format: password
- *                 minLength: 8
- *                 description: At least one number and one letter
+ *                 description: A proper address definition
  *             example:
  *               name: fake name
  *               email: fake@example.com
- *               password: password1
+ *               address: TR
  *     responses:
  *       "200":
  *         description: OK
@@ -230,7 +224,7 @@ module.exports = router;
  *
  *   delete:
  *     summary: Delete a contact
- *     description: Logged in contacts can delete only themselves. Only admins can delete other contacts.
+ *     description: Only allowed consumers can delete other contacts.
  *     tags: [Contacts]
  *     security:
  *       - bearerAuth: []
