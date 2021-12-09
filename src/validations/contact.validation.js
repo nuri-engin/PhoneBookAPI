@@ -5,6 +5,7 @@ const createContact = {
   body: Joi.object().keys({
     email: Joi.string().required().email(),
     name: Joi.string().required(),
+    address: Joi.string(),
     workNumber: Joi.string(),
     homeNumber: Joi.string(),
     mobileNumber: Joi.string(),

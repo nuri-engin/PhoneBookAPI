@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "6a951103-1c80-442b-95c8-f65900004902",
+		"name": "Phone Book API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/v1/contacts: Create a new contact",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "AnyToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test7@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "Test 001",
+							"type": "text"
+						},
+						{
+							"key": "address",
+							"value": "UK",
+							"type": "text"
+						},
+						{
+							"key": "workNumber",
+							"value": "3163636363",
+							"type": "text"
+						},
+						{
+							"key": "homeNumber",
+							"value": "1234567890",
+							"type": "text"
+						},
+						{
+							"key": "mobileNumber",
+							"value": "1234567890",
+							"type": "text"
+						},
+						{
+							"key": "otherNumber",
+							"value": "1234567890",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{LOCAL}}/v1/contacts",
+					"host": [
+						"{{LOCAL}}"
+					],
+					"path": [
+						"v1",
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
