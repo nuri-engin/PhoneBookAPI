@@ -129,6 +129,48 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "/v1/contacts: Query contacts",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "AnyToken",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{LOCAL}}/v1/contacts?limit=2&page=2&sortBy=name:asc",
+					"host": [
+						"{{LOCAL}}"
+					],
+					"path": [
+						"v1",
+						"contacts"
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "sortBy",
+							"value": "name:asc"
+						}
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
