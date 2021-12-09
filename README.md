@@ -26,3 +26,6 @@ An API that will serve as the backend for a phone book app, providing a list of 
 
 
 ## # Your contact details and any public profiles on developer networks.
+- [Personal site](http://nuri.engin.web.tr/) 
+- [LinkedIn](https://www.linkedin.com/in/nuriengin/) 
+- [Github](https://github.com/nuri-engin) 
