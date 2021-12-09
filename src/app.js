@@ -46,15 +46,18 @@ app.use(passport.initialize());
 passport.use('jwt', jwtStrategy);
 
 // limit repeated failed requests to auth endpoints
+// TODO: Update the RateLimiter usage for the Contacts endpoint.
 if (config.env === 'production') {
   app.use('/v1/auth', authLimiter);
 }
 
 // v1 api routes
+// TODO: Generate '/constants' folder and 'paths' file to keep path definitions in a maintable approach.
 app.use('/v1', routes);
 
 // send back a 404 error for any unknown api request
 app.use((req, res, next) => {
+  // TODO: Generate '/constants' folder and 'responseMessages' file to keep http-rrquest responses texts in a maintable approach.
   next(new ApiError(httpStatus.NOT_FOUND, 'Not found'));
 });
 
