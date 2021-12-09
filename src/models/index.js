@@ -1,1 +1,1 @@
-module.exports.User = require('./user.model');
+module.exports.Contact = require('./contact.model');

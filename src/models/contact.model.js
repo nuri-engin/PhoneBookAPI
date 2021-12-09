@@ -21,21 +21,45 @@ const userSchema = mongoose.Schema(
         }
       },
     },
-    password: {
+    address: {
       type: String,
-      required: true,
       trim: true,
-      minlength: 8,
-      validate(value) {
-        if (!value.match(/\d/) || !value.match(/[a-zA-Z]/)) {
-          throw new Error('Password must contain at least one letter and one number');
-        }
-      },
-      private: true, // used by the toJSON plugin
     },
-    isEmailVerified: {
-      type: Boolean,
-      default: false,
+    phoneWork: {
+      type: Number,
+      validate: {
+        validator(v) {
+          return /[0-9]/.test(v);
+        },
+        message: '{VALUE} is not a valid work phone number!',
+      },
+    },
+    phoneHome: {
+      type: Number,
+      validate: {
+        validator(v) {
+          return /[0-9]/.test(v);
+        },
+        message: '{VALUE} is not a valid work phone number!',
+      },
+    },
+    phoneMobile: {
+      type: Number,
+      validate: {
+        validator(v) {
+          return /[0-9]/.test(v);
+        },
+        message: '{VALUE} is not a valid work phone number!',
+      },
+    },
+    phoneOther: {
+      type: Number,
+      validate: {
+        validator(v) {
+          return /[0-9]/.test(v);
+        },
+        message: '{VALUE} is not a valid work phone number!',
+      },
     },
   },
   {
