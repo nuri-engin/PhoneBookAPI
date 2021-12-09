@@ -16,7 +16,13 @@ An API that will serve as the backend for a phone book app, providing a list of 
   - I've decided to remove AUTH process! but providing a simple auth-check. Aim to let quick testing with Postman on endpoint instead of registration process.  
 
 ## # Describe any trade-offs you needed to make and your reasoning.
+- I would use Postgres instead on MongoDB for better DB relations.
 
 ## # Point out anything you might do differently if you had more time.
+- Better testing, Left-out `TODOs` on source-code
+- CI/CD prooces with Heroku, Travis CI, etc.
+- Monitoring/Insight/Telemetry features
+    - Sample here @ https://github.com/nuri-engin/technotes/blob/main/server/README.md
+
 
 ## # Your contact details and any public profiles on developer networks.
