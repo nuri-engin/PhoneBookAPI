@@ -36,6 +36,11 @@ const updateContact = {
     .keys({
       email: Joi.string().email(),
       name: Joi.string(),
+      address: Joi.string(),
+      workNumber: Joi.string(),
+      homeNumber: Joi.string(),
+      mobileNumber: Joi.string(),
+      otherNumber: Joi.string(),
     })
     .min(1),
 };
