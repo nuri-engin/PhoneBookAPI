@@ -9,6 +9,11 @@ An API that will serve as the backend for a phone book app, providing a list of 
 - Use exist (PostmanCollections)[/postman-collections] on here to generate quick requests to the App.
 
 ## # Reasoning behind your technical choices.
+- Decided to use NodeJS, Express, MongoDB for the sake familirty.
+- Decided to use 'hagopj13's (a Uber engineer) 'node-express-boilerplate' to kick-off the project quickly
+  - It's one of most starred boilerproject with many features for NodeJS RESTful API.
+  - Provides; Code-quality, security, validation, logging, error handling, API doc, Test cases by default.
+  - I've decided to remove AUTH process! but providing a simple auth-check. Aim to let quick testing with Postman on endpoint instead of registration process.  
 
 ## # Describe any trade-offs you needed to make and your reasoning.
 
