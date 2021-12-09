@@ -1,14 +1,18 @@
 const Joi = require('joi');
 const { objectId } = require('./custom.validation');
 
-const createUser = {
+const createContact = {
   body: Joi.object().keys({
     email: Joi.string().required().email(),
     name: Joi.string().required(),
+    workNumber: Joi.string(),
+    homeNumber: Joi.string(),
+    mobileNumber: Joi.string(),
+    otherNumber: Joi.string(),
   }),
 };
 
-const getUsers = {
+const getContacts = {
   query: Joi.object().keys({
     name: Joi.string(),
     sortBy: Joi.string(),
@@ -17,15 +21,15 @@ const getUsers = {
   }),
 };
 
-const getUser = {
+const getContact = {
   params: Joi.object().keys({
-    userId: Joi.string().custom(objectId),
+    contactId: Joi.string().custom(objectId),
   }),
 };
 
-const updateUser = {
+const updateContact = {
   params: Joi.object().keys({
-    userId: Joi.required().custom(objectId),
+    contactId: Joi.required().custom(objectId),
   }),
   body: Joi.object()
     .keys({
@@ -35,16 +39,16 @@ const updateUser = {
     .min(1),
 };
 
-const deleteUser = {
+const deleteContact = {
   params: Joi.object().keys({
-    userId: Joi.string().custom(objectId),
+    contactId: Joi.string().custom(objectId),
   }),
 };
 
 module.exports = {
-  createUser,
-  getUsers,
-  getUser,
-  updateUser,
-  deleteUser,
+  createContact,
+  getContacts,
+  getContact,
+  updateContact,
+  deleteContact,
 };
