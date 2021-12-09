@@ -10,7 +10,7 @@ describe('Contact model', () => {
         email: faker.internet.email().toLowerCase(),
         address: faker.phone.phoneNumber(),
         workNumber: faker.phone.phoneNumber(),
-        homeNumber: faker.phone.phoneNumber(),
+        homeNumber: 242898478,
         mobileNumber: faker.phone.phoneNumber(),
         otherNumber: faker.phone.phoneNumber(),
       };
@@ -25,9 +25,13 @@ describe('Contact model', () => {
       await expect(new Contact(newContact).validate()).rejects.toThrow();
     });
 
-    test('should throw a validation error if role is unknown', async () => {
-      newContact.role = 'invalid';
+    test('should throw a validation error if workNumber contains string characters', async () => {
+      newContact.workNumber = 'workNumber0101';
       await expect(new Contact(newContact).validate()).rejects.toThrow();
+    });
+
+    test('should return contact homeNumber correct', async () => {
+      await expect(new Contact(newContact).toJSON().homeNumber).toEqual(242898478);
     });
   });
 
