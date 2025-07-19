@@ -42,7 +42,7 @@
     "phone-book-api"
   ],
   "dependencies": {
-    "compression": "^1.7.4",
+    "compression": "^1.8.1",
     "cors": "^2.8.5",
     "cross-env": "^7.0.0",
     "dotenv": "^10.0.0",
@@ -54,7 +54,7 @@
     "joi": "^17.3.0",
     "moment": "^2.24.0",
     "mongoose": "^5.7.7",
-    "morgan": "^1.9.1",
+    "morgan": "^1.10.1",
     "pm2": "^5.1.0",
     "swagger-jsdoc": "^6.0.8",
     "swagger-ui-express": "^4.1.6",
